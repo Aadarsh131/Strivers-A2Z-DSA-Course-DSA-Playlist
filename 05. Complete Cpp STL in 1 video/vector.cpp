@@ -29,18 +29,21 @@ int main()
     vector<int>::reverse_iterator it2 = v.rbegin(); // first reverses it then iterate
     vector<int>::reverse_iterator it3 = v.rend();   // first reverses it then iterate
 
-    cout << v.back() << endl; // shows the last element
+    cout << v.back() << endl;  // shows the last element
+    cout << v.front() << endl; // shows the first element
 
     ////////////Display
     for (vector<int>::iterator i = v.begin(); i != v.end(); i++)
     {
         cout << *i << " ";
     }
+    cout << endl;
     // OR
     for (auto i = v.begin(); i != v.end(); i++)
     {
         cout << *i << " ";
     }
+    cout << endl;
     // OR
     for (auto i : v)
     {
@@ -71,7 +74,8 @@ int main()
     v.pop_back();             // delete the last element
     vector<int> v1 = {1, 2, 3, 4, 5};
     vector<int> v2 = {4, 5, 7, 0, 9};
-    v1.swap(v2);        // swaps
-    v1.clear();         // deletes all the items inside the vector
-    cout << v2.empty(); // true OR false
+    v1.swap(v2);                // swaps
+    v1.clear();                 // deletes all the items inside the vector
+    cout << v2.empty() << endl; // true OR false
+    cout << v1.empty() << endl;
 }

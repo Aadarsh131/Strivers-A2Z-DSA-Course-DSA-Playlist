@@ -2,6 +2,17 @@
 #include <stack>
 using namespace std;
 
+void loopOver(stack<int> a)
+{
+    if (a.empty())
+        return;
+
+    cout << a.top() << " ";
+    a.pop();
+    loopOver(a);
+    a.push(a.top());
+}
+
 int main()
 {
     stack<int> a;
@@ -21,4 +32,27 @@ int main()
     s1.swap(s2);
 
     // NOTE: every operations above, has 0(1) (i.e, constant time complexity)
+
+    // Traverse
+    // no iterators for stack (hence,no begin() and end() functions)
+    // there are 3 ways we can traverse
+
+    // #1 way-
+    stack<int> b(a);
+    // for (int i = 1; i < a.size(); i++)
+    // {
+    //     cout << b.top() << endl;
+    //     b.pop();
+    // }
+    // OR
+    while (!b.empty())
+    {
+        cout << b.top() << " ";
+        b.pop();
+    }
+
+    // #2 way(using recursion, heap mem is used)-
+    loopOver(a);
+    cout << endl;
+    
 }
